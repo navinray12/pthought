@@ -41,7 +41,7 @@ export function useAppointments(doctorId: string | null, date: Date) {
       }
     }
     load();
-    return () => (mounted = false);
+    return () => {mounted = false;};
   }, [doctorId, date]);
 
   const timeSlots = useMemo(() => generateDaySlots(date), [date]);
